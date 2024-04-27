@@ -93,9 +93,9 @@ const register = async (req, res) => {
   //   return res.status(400).json({ msg: "Email already in use" });
   // }
 
-let { email, password } = req.body;
+let { firstName, lastName, email, phoneNumber, password } = req.body;
     console.log(req.body)
-    if(  !email || !password )
+    if(!firstName || !lastName || !email || !phoneNumber || !password )
     {
         return res.status(200).json({error:"Add all data"})
     }
@@ -107,9 +107,10 @@ let { email, password } = req.body;
                  return res.status(422).json({error:"User already exists with that email"})
             }
             const user=new User({
-               
+              firstName,
+              lastName, 
               email, 
-              
+              phoneNumber,
                password:hashedpw
              
          })

@@ -2,18 +2,18 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
 const UserSchema = new mongoose.Schema({
-    // firstName: {
-    //     type: String,
-    //     required: [true, 'Please provide first name'],
-    //     minlength: 3,
-    //     maxlength: 50
-    // },
-    // lastName: {
-    //     type: String,
-    //     required: [true, 'Please provide last name'],
-    //     minlength: 3,
-    //     maxlength: 50
-    // },
+    firstName: {
+        type: String,
+        required: [true, 'Please provide first name'],
+        minlength: 3,
+        maxlength: 50
+    },
+    lastName: {
+        type: String,
+        required: [true, 'Please provide last name'],
+        minlength: 3,
+        maxlength: 50
+    },
     email:{
         type: String,
         required: [true, 'Please provide email'],
@@ -21,12 +21,12 @@ const UserSchema = new mongoose.Schema({
         minlength: 3,
         maxlength: 50
     },
-    // phoneNumber: {
-    //     type: Number,
-    //     required: [true, 'Please provide phone number'],
-    //     minlength: 10,
-    //     maxlength: 10
-    // },
+    phoneNumber: {
+        type: Number,
+        required: [true, 'Please provide phone number'],
+        minlength: 10,
+        maxlength: 10
+    },
     password: {
         type: String,
         required: [true, 'Please provide password'],
